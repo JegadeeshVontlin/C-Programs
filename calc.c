@@ -7,10 +7,11 @@ int i, values[9],sol=0;
 char oprn[3];
 
 
-//values[9] = **argv;
+
 /*	printf("%d", argc);*/
 /*	printf("%s", argv[1]);*/
 /*	printf("%s", argv[2]);*/
+	
 	// Checking number of inputs 
 	if(argc > 11) {
 		printf("Input is out of range, Calculator supports only 9 value \n");
