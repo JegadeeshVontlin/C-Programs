@@ -21,7 +21,6 @@ char oprn[3];
 	// Parsing operation
 	for(i=1;i<2;i++) {
 		oprn[i] = argv[i][i-1];
-/*	printf("values are %c \n", oprn[i]);*/
 	}
 
 	switch (oprn[1])	{
@@ -58,8 +57,4 @@ char oprn[3];
 		printf("Invalid mathematical operation \n");
 
 	}
-
-
-
-
 }
