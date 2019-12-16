@@ -1,60 +1,37 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main(int argc, char *argv[])
-{
 
-int i, values[9],sol=0;
-char oprn[3];
+int main() {
+	int i, values[9],sum=0;
+	char *ptr_oprn,operation[23],oprn[3];
+	ptr_oprn = operation;
 
-
-
-/*	printf("%d", argc);*/
-/*	printf("%s", argv[1]);*/
-/*	printf("%s", argv[2]);*/
 	
-	// Checking number of inputs 
-	if(argc > 11) {
-		printf("Input is out of range, Calculator supports only 9 value \n");
-		return 0;
-	}
+	for(i=0;i<22;i++) {
+		ptr_oprn[i] = getc(stdin);
+		//putc(ptr_oprn[i],stdout);
+		
+		//if(ptr_oprn[i] == ' ') {
+			
+			//i++;
+			//sum += atoi(ptr_oprn[i]);
+			//putc(sum, stdout);
+		//}
 
-	// Parsing operation
-	for(i=1;i<2;i++) {
-		oprn[i] = argv[i][i-1];
 	}
-
-	switch (oprn[1])	{
 	
-	case 'a':
-		for(i=2;i<argc;i++) {
-			sol += atoi(argv[i]);
+	if(ptr_oprn[0] == 'a' && ptr_oprn[1] == 'd' && ptr_oprn[2] == 'd') {
+		for(i=3;i<22;i++) {
+			while(ptr_oprn[i] == ' ' ) {
+				i++;
+				sum += ptr_oprn[i];
+				printf("%d", sum);
+			
+			}
+
+				
 		}
-		printf("Additioned values are %d \n",sol);
-	break;
-
-	case 's':
-		for(i=2;i<argc;i++) {
-			sol -= atoi(argv[i]);
-		}
-		printf("Subtracted values are  %d \n",sol);
-	break;
-
-	case 'm':
-		for(i=2;i<argc;i++) {
-			sol *= atoi(argv[i]);
-		}
-		printf("Multiplied values are  %d \n",sol);
-	break;
-
-	case 'd':
-		for(i=2;i<argc;i++) {
-			sol /= atoi(argv[i]);
-		}
-		printf("Divided values are  %d \n",sol);
-	break;	
-
-	default:
-		printf("Invalid mathematical operation \n");
-
 	}
 }
+	
+
