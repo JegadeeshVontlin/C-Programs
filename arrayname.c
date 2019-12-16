@@ -28,20 +28,20 @@ void add(char *add_name, int *add_age)
 	
 }
 
-/*void delete(*name)*/
-/*{*/
-/*	// Delete the array from the given name*/
-/*}*/
+void delete(*name)
+{
+	// Delete the array from the given name
+}
 
-/*void display() */
-/*{*/
-/*	// free all the record */
-/*}*/
+void display() 
+{
+	// free all the record 
+}
 
-/*void array_exit()*/
-/*{*/
-/* return 0;*/
-/*}*/
+void array_exit()
+{
+ return 0;
+}
 
 void main()
 {
