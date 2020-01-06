@@ -4,38 +4,24 @@
 //#include "calculator.h"
 
 int main() {
-	int i,sum=0,value=0;
-	char ascii='0',*ptr,operation[23];
-	ptr = operation;
-	
-
-	
-	for(i=0;i<6;i++) {
-		ptr[i] = getc(stdin);
-		//putc(ptr_oprn[i],stdout);		
+	int i,sum=0,count=0,value=0;
+	char ascii='0',operation[24];
+	for(i=0;i<23;i++)
+ 	{
+		operation[i] = getc(stdin);	
+		count++;		
 	}
 
 	if((operation[0] == 'a') && (operation[1] == 'd') && (operation[2] == 'd'))  {
-		//addition((char*) &ptr_oprn);	
-		//sum = atoi(operation[4]);
-		for(i=3;i<22;i++) {
-			if(operation[i] == ' ')  {
-				operation[i++];
-				//sum += operation[i];
-				//printf("%d\n", operation[i]);		
-				//printf("it is empty maame");
-				//printf("operation[%d] is %d \n",i, operation[i]);			
-			}
-			value = operation[i] - ascii;
-			sum +=value;
-			//printf("%d\n%d\n%d\n", value, operation[i], ascii);
-			//sum += (int)operation[i];
-			
-			//printf("%d\n", (int)operation[i]);	
+		//addition((&operation[i]);
+		for(i=3;i<count;i++) {
+			if (operation[i] == ' ')  {
+				// Do nothing
+			}			
+			i++;
+			sum += (int)operation[i] - ascii;
 		}	
-		printf("%d\n",sum);
-			//printf("%d", (int)sum);	
-
+		printf("%d\n", (int)sum);
 	}
 /*	else if(ptr_oprn[0] == 's' && ptr_oprn[1] == 'u' && ptr_oprn[2] == 'b') {*/
 /*		subraction(*ptr_oprn);*/
@@ -57,9 +43,3 @@ int main() {
 /*	}*/
 
 }
-	
-
-
-
-
-
