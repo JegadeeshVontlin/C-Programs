@@ -5,23 +5,25 @@
 
 int main() {
 	int i,sum=0,count=0,value=0;
-	char ascii='0',operation[24];
+	char ascii='0', *ptr, operation[24];
+	ptr = operation;
 	for(i=0;i<23;i++)
  	{
-		operation[i] = getc(stdin);	
+		ptr[i] = getc(stdin);	
 		count++;		
 	}
 
-	if((operation[0] == 'a') && (operation[1] == 'd') && (operation[2] == 'd'))  {
+	if((ptr[0] == 'a') && (ptr[1] == 'd') && (ptr[2] == 'd'))  {
 		//addition((&operation[i]);
 		for(i=3;i<count;i++) {
-			if (operation[i] == ' ')  {
+			if (ptr[i] == ' ')  {
 				// Do nothing
-			}			
+			}	
 			i++;
-			sum += (int)operation[i] - ascii;
+			//printf("pointer[%d] is %d \n", i, atoi((ptr+i)));		
+			sum += atoi((ptr+i));
 		}	
-		printf("%d\n", (int)sum);
+		printf("%d\n", sum);
 	}
 /*	else if(ptr_oprn[0] == 's' && ptr_oprn[1] == 'u' && ptr_oprn[2] == 'b') {*/
 /*		subraction(*ptr_oprn);*/
