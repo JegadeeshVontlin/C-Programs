@@ -3,19 +3,30 @@
 
 //#include "calculator.h"
 
-int main() {
-	int i,sum=0,count=0,value=0;
+void main() {
+	int i,sum=0,count=0;
 	char ascii='0', *ptr, operation[24];
 	ptr = operation;
 	for(i=0;i<23;i++)
  	{
 		ptr[i] = getc(stdin);	
-		count++;		
+		count++;	
+		if(ptr[i] == 0x0A)	 {
+			break;		
+		}
 	}
+			
+/*	while(ptr[i] = getc(stdin)	) {*/
+/*			i++;*/
+/*			count++;*/
+/*		if(ptr[i] == 0x0A) {*/
+/*			break;*/
+/*		}*/
+/*	}*/
 
 	if((ptr[0] == 'a') && (ptr[1] == 'd') && (ptr[2] == 'd'))  {
-		//addition((&operation[i]);
-		for(i=3;i<count;i++) {
+		//addition(operation, count, );
+	for(i=3;i<count;i++) {
 			if (ptr[i] == ' ')  {
 				// Do nothing
 			}	
@@ -23,8 +34,9 @@ int main() {
 			//printf("pointer[%d] is %d \n", i, atoi((ptr+i)));		
 			sum += atoi((ptr+i));
 		}	
-		printf("%d\n", sum);
+		putc(sum,stdout);
 	}
+	
 /*	else if(ptr_oprn[0] == 's' && ptr_oprn[1] == 'u' && ptr_oprn[2] == 'b') {*/
 /*		subraction(*ptr_oprn);*/
 /*	}*/
