@@ -20,19 +20,20 @@ int main() {
 	if((ptr[0] == 'a') && (ptr[1] == 'd') && (ptr[2] == 'd'))  {
 		//addition(ptr, count, op);	
 		for(i=3;i<count;i++) {
-			if (ptr[i] == ' ')  {
+			if (ptr[i] == ' ' ) {
 				// Do nothing
 				i++;
 				sum += atoi((ptr+i));
-			}	
+
+			}
 			else {								
-				if( (ptr[i] == ' ' ) && ( count == 21 ) ) {				
-					//dp  = ptr[++i] + ptr[++i];
+				if( (ptr[i] == ' ' ) && ( count == 23 ) ) {					
 					//ddsum = atoi((char*)dp);
-					sum += dp + atoi((ptr+i)); 
-				}
-				else{
+					//sum += dp + atoi((ptr+i)); 
 					sum += atoi((ptr+i));
+					if(count == 21) {						
+
+					}
 				}
 			}
 		}
