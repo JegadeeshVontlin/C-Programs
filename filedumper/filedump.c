@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
 		if(data) {
 			if(memcmp(unit_name, "B", sizeof(unit_name)) == 0) {
-				printf("byte code \n ");
+				printf("byte code \n");
 				
 				for(i=0;i<lengthof;i++) {
 					fputs((const char*)data, fp);
@@ -67,10 +67,16 @@ int main(int argc, char *argv[])
 				for(i=0;i<lengthof*1000000000;i++) {
 					fputs((const char*)data, fp);
 				}
+			}
+			else if(memcmp(unit_name, "TB", sizeof(unit_name)) == 0) {
+				printf("Tera byte code  \n");
+				for(i=0;i<lengthof*1000000000000;i++) {
+					fputs((const char*)data, fp);
+				}
 			}			
 		}	
 		else {
-			printf("\nNo input character given for payload \n");
+			printf("\nNo input character given for payload\n");
 		}	
 		fclose(fp);		
 	} 	
