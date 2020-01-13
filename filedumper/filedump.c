@@ -45,28 +45,34 @@ int main(int argc, char *argv[])
 			}
 			else if(memcmp(unit_name, "KB", sizeof(unit_name)) ==0 ) {
 				printf("Kilo byte code  \n");
-				for(i=0;i<lengthof*1000;i++) {
+				for(i=0;i<lengthof*1024;i++) {
 					fputs((const char*)data, fp);
 				}
 			}
 			else if(memcmp(unit_name, "MB", sizeof(unit_name)) == 0) {
 				printf("Mega byte code  \n");
-				for(i=0;i<lengthof*1000000;i++) {
+				for(i=0;i<lengthof*1000024;i++) {
 					fputs((const char*)data, fp);
 				}
 			}
 			else if(memcmp(unit_name, "GB", sizeof(unit_name)) == 0) {
 				printf("Giga byte code  \n");
-				for(i=0;i<lengthof*1000000000;i++) {
+				for(i=0;i<lengthof*1000000024;i++) {
 					fputs((const char*)data, fp);
 				}
 			}
 			else if(memcmp(unit_name, "TB", sizeof(unit_name)) == 0) {
 				printf("Tera byte code  \n");
-				for(i=0;i<lengthof*1000000000000;i++) {
+				for(i=0;i<lengthof*1000000000024;i++) {
 					fputs((const char*)data, fp);
 				}
-			}			
+			}
+			else if(memcmp(unit_name, "PB", sizeof(unit_name)) == 0) {
+				printf("Peta byte code  \n");
+				for(i=0;i<lengthof*1000000000000024;i++) {
+					fputs((const char*)data, fp);
+				}
+			}				
 		}	
 		else {
 			printf("\nNo input character given for payload\n");
