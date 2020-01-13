@@ -36,16 +36,19 @@ int main(int argc, char *argv[])
 	
 	fp = fopen(data_ptr, "w");	
 	if(fp == NULL) {
-		printf("file failed to open");		
+		printf("No File created");		
 	}
 	else{
-		printf("the file is now created \n");		
+		printf("Processing Input  \n");	
+
 		if(data) {
-			if(memcmp(unit_name, "b", sizeof(unit_name)) == 0) {
-				printf("byte code \n");
+			if(memcmp(unit_name, "B", sizeof(unit_name)) == 0) {
+				printf("byte code \n ");
+				
 				for(i=0;i<lengthof;i++) {
 					fputs((const char*)data, fp);
 				}
+				
 			}
 			else if(memcmp(unit_name, "KB", sizeof(unit_name)) ==0 ) {
 				printf("Kilo byte code  \n");
@@ -65,7 +68,10 @@ int main(int argc, char *argv[])
 					fputs((const char*)data, fp);
 				}
 			}			
-		}		
+		}	
+		else {
+			printf("\nNo input character given for payload \n");
+		}	
 		fclose(fp);		
 	} 	
 } 
