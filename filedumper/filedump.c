@@ -17,15 +17,8 @@ int main(int argc, char *argv[])
 	
 	/* Getting the inputs for file */
 	
-	
 	/* Processing of inputs for file oepration */
-	if(argv[1] ==" ") {
-		data_ptr = default_name;
-	
-	}
-	else {
-		data_ptr = argv[1];
-	}
+	data_ptr = argv[1];
 	length = argv[2];
 	//lengthof = atoi(argv[2]);	
 	for(i=0;i<2;i++) {
@@ -80,4 +73,5 @@ int main(int argc, char *argv[])
 		}	
 		fclose(fp);		
 	} 	
+
 } 
