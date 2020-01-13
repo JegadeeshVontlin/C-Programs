@@ -19,15 +19,13 @@ int main(int argc, char *argv[])
 	
 	
 	/* Processing of inputs for file oepration */
-	
-
-		//data_ptr = default_name;
-		//printf("input goes bad here");
 	if(argv[1] ==" ") {
 		data_ptr = default_name;
 	
 	}
-	data_ptr = argv[1];
+	else {
+		data_ptr = argv[1];
+	}
 	length = argv[2];
 	//lengthof = atoi(argv[2]);	
 	for(i=0;i<2;i++) {
@@ -35,16 +33,13 @@ int main(int argc, char *argv[])
 	}
 	lengthof = atoi((char*)length);
 	data = argv[4];
-
 	
-	fp = fopen(data_ptr, "w");
-	
+	fp = fopen(data_ptr, "w");	
 	if(fp == NULL) {
 		printf("file failed to open");		
 	}
 	else{
-		printf("the file is now created \n");
-		
+		printf("the file is now created \n");		
 		if(data) {
 			if(memcmp(unit_name, "b", sizeof(unit_name)) == 0) {
 				printf("byte code \n");
@@ -69,24 +64,8 @@ int main(int argc, char *argv[])
 				for(i=0;i<lengthof*1000000000;i++) {
 					fputs((const char*)data, fp);
 				}
-			}
-			
-		}
-		
-		fclose(fp);
-		
-		//printf("Data successfully written in file, YAY!");
-	}
- 	
-	
-	printf("%s \n", data_ptr);
-	printf("%s \n", length);
-	printf("%d \n", lengthof);
-	printf("%s \n", unit_name);
-	printf("%s \n", data);
-	printf("%d \n", argc);
-	
-	
-	
-	
+			}			
+		}		
+		fclose(fp);		
+	} 	
 }
