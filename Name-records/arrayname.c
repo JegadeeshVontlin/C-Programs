@@ -1,66 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int i,choice,count=0;
+	char *record, record_store[15];	 
+	record = record_store;
 
-
-char *name, value_name[10];
-int *age,choice,i,count=0,value_age[10];
-name = value_name;
-age = value_age;
-
-
-void add(char *add_name, int *add_age) 
-{	
-	// Getting the input upto 10 names and age
-	for(i=0;i<10;i++) {
-		scanf("%s", add_name);	
-		scanf("%d", add_age);
-		add_name++;
-		add_age++;
-		count++;
+	
+	choose:
+	printf("1.Add record \t\t2.Delete record \n3.Display all record \t4.Exit the program \n\nEnter your choice:\n");
+	scanf("%d", &choice);
+	if(choice == 1) {
+		printf("Enter name and age \n");
+		// Check for first entry ,if not increment it by checking count value.
+		// if the above condition passes check the record[count] with size of it, if the current record size is 0, pour the data else loop it to check empty record within count value 10.
+		scanf("%s",record);
+		printf("%s is added \n", record);
+		goto choose;
 	}
 	
-}
-
-void delete(char *del_name)
-{
-	// Delete the array from the given name
-	for(i=0;i<count;i++) {
-		name[i]= "";		
+	else if(choice == 2) {
+		printf("Enter the name you would like to delete: ");
+		scanf("%s", record);
+		// do a for loop for searching a name in the pointer memories
+		
+	}
+	else if(choice == 3){
+		printf("Displaying all records: %d \n",count);
+		for(i=0;i<count;i++) {
+			printf("%s",  (char*)record);
+		}
+			//printf("%s", name);
+			//printf("%d \n", *age);			 
+	}
+	else {
+		exit(0);
 	}
 }
-
-void main()
-{
-
-  printf("1.Add \t\t\t2.Delete \n3.Display all record \t4.Exit the program \nEnter your choice:");
-  scanf("%d",&choice);
-
-  if(choice == 1) {
-  	if(count <=10) {
-	    add(*name,*age);
-    } else {
-    	printf("Maximum 10 records can be added");
-    }
-  }
-  else if(choice == 2) {
-  	  printf("Enter the name you would like to delete");
-  	  name:
-      scanf("%d", &name);
-      if(name!=NULL) {
-      	delete(name);
-      }
-      else {
-      	printf("Please enter a valid name");
-      	goto name;
-      }
-    }
-  }
-  else if (choice == 3) {
-    for(i=0;i<count;i++) {
-    	printf("%s", name[i])
-		printf("\t %d \n", age[i])
-    }
-  }
-  else(choice == 4) {
-	exit();  
-  } 
-}  
