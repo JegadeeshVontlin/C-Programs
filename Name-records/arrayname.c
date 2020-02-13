@@ -12,18 +12,25 @@ int main()
 	scanf("%d", &choice);
 	if(choice == 1) {
 		printf("Enter name and age \n");
-		// Check for first entry ,if not increment it by checking count value.
-		// if the above condition passes check the record[count] with size of it, if the current record size is 0, pour the data else loop it to check empty record within count value 10.
-		scanf("%s",record);
-		printf("%s is added \n", record);
+		/* Check for first entry ,if not increment it by checking count value */
+		if(count >10 ) {
+			count++;
+			scanf("%s",record);
+			printf("%s is added \n", record);
+
+		}
+		/*if the above condition passes check the record[count] with size of it, 
+		if the current record size is 0, pour the data else loop it to check empty record within count value 10. */
 		goto choose;
 	}
 	
+	/* when deleting a record, jsut minus the count to one, so the programs works well whwn adding or removing records */
 	else if(choice == 2) {
 		printf("Enter the name you would like to delete: ");
 		scanf("%s", record);
-		// do a for loop for searching a name in the pointer memories
-		
+		/*  do a for loop on searching a name in the pointer memories with two dimension array by 
+		using sizeof opeartor in input and comparing it with all names in the record */
+			
 	}
 	else if(choice == 3){
 		printf("Displaying all records: %d \n",count);
