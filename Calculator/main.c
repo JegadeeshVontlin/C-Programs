@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "calculator.h"
 
 int main() {
 	int i,count=0,sum=0, ddsum=0;
-	char *ptr,operation[24],dd_operation[1],op, dp;
+	char *ptr,operation[26],dd_operation[1],op, dp;
 	ptr = operation;
 	char error[] = "Calculator Doesn't support more than 10 digits";
 	for(i=0;i<23;i++)
@@ -16,29 +15,31 @@ int main() {
 			break;		
 		}
 	}
-
+	printf("the total value entered is %d \n", count);
 	if((ptr[0] == 'a') && (ptr[1] == 'd') && (ptr[2] == 'd'))  {
 		//addition(ptr, count, op);	
-		for(i=3;i<count;i++) {
-			if (ptr[i] == ' ' ) {
-				// Do nothing
-				i++;
+		if(count >23 ) {
+			for(i=3;i<26;i++) {
 				sum += atoi((ptr+i));
-
-			}
-			else {								
-				if( (ptr[i] == ' ' ) && ( count == 23 ) ) {					
-					//ddsum = atoi((char*)dp);
-					//sum += dp + atoi((ptr+i)); 
-					sum += atoi((ptr+i));
-					if(count == 21) {						
-
-					}
+				if(count==23) {
+					dp  = ptr[++i] + ptr[++i];	
+					sum += dp + atoi((ptr+i)); 
+	printf("the total value entered is %d \n", count);
 				}
 			}
 		}
-		printf("%d\n", sum);
+		else {
+			for(i=3;i<26;i++) {
+				if (ptr[i] == ' ' ) {
+						// Do nothing
+						i++;
+						sum += atoi((ptr+i));
+				}
+			}
+		}	
+				printf("%d\n", sum);
 	}
+
 /*	else if((ptr[0] == 's') && (ptr[1] == 'u') && (ptr[2] == 'b')) {*/
 /*		subtraction(ptr, count, op);	*/
 /*	}*/
